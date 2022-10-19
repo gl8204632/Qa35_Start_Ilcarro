@@ -15,12 +15,9 @@
 package manager;
 
        // import models.User;
-        import org.openqa.selenium.Alert;
-        import org.openqa.selenium.By;
-        import org.openqa.selenium.WebDriver;
-        import org.openqa.selenium.WebElement;
 
-        import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 
 public class HelperUser extends  HelperBase{
 
@@ -42,6 +39,12 @@ public class HelperUser extends  HelperBase{
         type(By.id("email"),email);
         type(By.id("password"),password);
     }
+
+
+    public String getMassege() {
+        pause(2000);
+        return wd.findElement(By.cssSelector("h2.message")).getText();
+    }
 }
-}
+
 

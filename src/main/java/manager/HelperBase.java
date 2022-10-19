@@ -27,9 +27,11 @@ public class HelperBase {
             element.click();
             element.clear();
             element.sendKeys(text);}
+            }
 
-
-    }
+    public void submit() {
+     wd.findElement(By.cssSelector("button[type='submit']")).click();
+      }
 
 
 
