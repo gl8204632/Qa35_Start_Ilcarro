@@ -16,6 +16,7 @@ package manager;
 
        // import models.User;
 
+import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -46,6 +47,13 @@ public class HelperUser extends  HelperBase {
         type(By.id("password"), password);
     }
 
+    public void fillLoginForm(User user) {
+        type(By.id("email"), user.getEmail());
+        type(By.id("password"), user.getPassword());
+        //System.out.println(user.getPassword());
+        //pause(2000);
+    }
+
 
     public String getMessage() {
         //pause(2000);
@@ -63,7 +71,28 @@ public class HelperUser extends  HelperBase {
     }
 
     public void clickOkButton(){
+        if(isElementPresent(By.xpath("//button[text()='Ok']")))
         click(By.xpath("//button[text()='Ok']"));
+    }
+
+    public String getErrorText() {
+        return wd.findElement(By.cssSelector("div.error>div")).getText();
+    }
+
+    public boolean isYallaButtonNotActive(){
+
+        return wd.findElement(By.cssSelector("[type='submit']")).isEnabled();
+        //return wd.findElement(By.cssSelector("button[disabled]"));
+        //return res &&wd.findElement(By.cssSelector("[type='submit']")).isEnabled();
+
+    }
+
+
+    public String getTitleMassege() {
+        WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector("div.dialog-container"))));
+
+        return wd.findElement(By.cssSelector("div.dialog-container>h1")).getText();
     }
 }
 
