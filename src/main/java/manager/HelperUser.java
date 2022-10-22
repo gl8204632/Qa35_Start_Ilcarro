@@ -18,8 +18,13 @@ package manager;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HelperUser extends  HelperBase{
+import java.time.Duration;
+
+public class HelperUser extends  HelperBase {
 
     public HelperUser(WebDriver wd) {
         super(wd);
@@ -36,15 +41,16 @@ public class HelperUser extends  HelperBase{
     }
 
     public void fillLoginForm(String email, String password) {
-        type(By.id("email"),email);
-        type(By.id("password"),password);
+        type(By.id("email"), email);
+        type(By.id("password"), password);
     }
 
 
     public String getMassege() {
-        pause(2000);
+        //pause(2000);
+        WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector("div.dialog-container"))));
         return wd.findElement(By.cssSelector("h2.message")).getText();
     }
 }
-
 
