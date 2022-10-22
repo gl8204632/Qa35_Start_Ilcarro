@@ -23,6 +23,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.List;
 
 public class HelperUser extends  HelperBase {
 
@@ -46,11 +47,23 @@ public class HelperUser extends  HelperBase {
     }
 
 
-    public String getMassege() {
+    public String getMessage() {
         //pause(2000);
         WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
         wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector("div.dialog-container"))));
         return wd.findElement(By.cssSelector("h2.message")).getText();
+    }
+
+    public boolean isLogged(){
+       return isElementPresent(By.xpath("//a[text()=' logout ']"));
+    }
+
+    public void logOut(){
+        wd.findElement(By.xpath("//a[text()=' logout ']")).click();
+    }
+
+    public void clickOkButton(){
+        click(By.xpath("//button[text()='Ok']"));
     }
 }
 
