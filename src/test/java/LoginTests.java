@@ -8,6 +8,7 @@ public class LoginTests extends TestBase{
 
     @BeforeMethod
     public void precondition (){
+
         if (app.getHelperUser().isLogged()){
             app.getHelperUser().logOut();
 
@@ -24,6 +25,7 @@ public class LoginTests extends TestBase{
         Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
 
 
+
     }
 
     @Test
@@ -35,6 +37,7 @@ public class LoginTests extends TestBase{
         app.getHelperUser().submit();
 
         Assert.assertEquals(app.getHelperUser().getMessage(),"Logged in success");
+
     }
 
 
@@ -48,7 +51,7 @@ public class LoginTests extends TestBase{
         Assert.assertEquals(app.getHelperUser().getErrorText(),"It'snot look like email");
 
         Assert.assertFalse(app.getHelperUser().isYallaButtonNotActive());
-        //Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
+
 
 
     }
@@ -81,7 +84,9 @@ public class LoginTests extends TestBase{
 
   @AfterMethod
 
-    public void postCondition(){
+   public void postCondition(){
         app.getHelperUser().clickOkButton();
     }
+
+
 }

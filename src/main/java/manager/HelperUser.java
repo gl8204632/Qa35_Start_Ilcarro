@@ -33,14 +33,14 @@ public class HelperUser extends  HelperBase {
     }
 
     public void openLoginFormHeader() {
-        wd.findElement(By.cssSelector("a[href ^='/login']")).click();
+        wd.findElement(By.cssSelector("a[href ^='login']")).click();
 
     }
 
-    public void openLoginFormFooter() {
-        wd.findElement(By.xpath("//a[text()='Log in']")).click();
+   // public void openLoginFormFooter() {
+       // wd.findElement(By.xpath("//a[text()='Log in']")).click();
 
-    }
+    //}
 
     public void fillLoginForm(String email, String password) {
         type(By.id("email"), email);
@@ -62,18 +62,32 @@ public class HelperUser extends  HelperBase {
         return wd.findElement(By.cssSelector("h2.message")).getText();
     }
 
+    //public boolean isLogged(){
+      // return isElementPresent(By.xpath("//a[text()='logout']"));
+    //}
+
+    //public void logOut(){
+      //  wd.findElement(By.xpath("//a[text()='logout']")).click();
+    //}
+
+    //**********************************
     public boolean isLogged(){
-       return isElementPresent(By.xpath("//a[text()=' logout ']"));
+    return isElementPresent(By.cssSelector("body > app-root > app-navigator > div.header > a:nth-child(5)"));
     }
 
     public void logOut(){
-        wd.findElement(By.xpath("//a[text()=' logout ']")).click();
+        wd.findElement(By.cssSelector("body > app-root > app-navigator > div.header > a:nth-child(5)")).click();
     }
+
+
 
     public void clickOkButton(){
         if(isElementPresent(By.xpath("//button[text()='Ok']")))
         click(By.xpath("//button[text()='Ok']"));
     }
+
+
+
 
     public String getErrorText() {
         return wd.findElement(By.cssSelector("div.error>div")).getText();

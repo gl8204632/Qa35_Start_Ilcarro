@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27a4a38d-b4e3-48e5-b1ab-479841bbbd57" name="Changes" comment="" />
+    <list default="true" id="27a4a38d-b4e3-48e5-b1ab-479841bbbd57" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/manager/HelperUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/LoginTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/LoginTests.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -174,9 +178,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.LoginTests" />
-        <item itemvalue="Gradle.LoginTests.LoginUnSuccessess" />
-        <item itemvalue="Gradle.LoginTests.negativeWrongPasswordl" />
         <item itemvalue="Gradle.LoginTests.negativeWrongEmail" />
+        <item itemvalue="Gradle.LoginTests.negativeWrongPasswordl" />
+        <item itemvalue="Gradle.LoginTests.LoginUnSuccessess" />
         <item itemvalue="Gradle.LoginTests.LoginSuccessessModels" />
       </list>
     </recent_temporary>
